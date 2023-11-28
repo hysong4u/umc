@@ -25,7 +25,7 @@ public class ReviewService {
         Member member = memberRepository.findById(request.memberId())
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 회원입니다."));
 
-        Store stores = storeRepository.findById(request.storeId())
+        Store store = storeRepository.findById(request.storeId())
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 가게입니다."));
 
         Review review = Review.builder()
@@ -33,7 +33,7 @@ public class ReviewService {
                 .content(request.content())
                 .score(request.score())
                 .member(member)
-                .store(stores)
+                .store(store)
                 .build();
 
         return reviewRepository.save(review);

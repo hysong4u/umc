@@ -12,14 +12,12 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class ReviewController {
 
-    private static final String CUSTOM_AUTH_ID = "X-Auth-Id";
-
     private final ReviewService reviewService;
 
     @PostMapping
     public ResponseEntity<Review> createReview(
             @RequestBody final CreateReviewRequest request) {
-        Review createReview = reviewService.createReview(request);
+        reviewService.createReview(request);
         return ResponseEntity.noContent().build();
     }
 }
