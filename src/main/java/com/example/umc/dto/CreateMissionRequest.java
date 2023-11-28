@@ -13,12 +13,5 @@ public record CreateMissionRequest(
         String missionSpec,
         Long storeId
 ) {
-    public Mission of(Mission mission, Store store) {
-        return Mission.builder()
-                .reward(mission.getReward())
-                .deadline(mission.getDeadline())
-                .missionSpec(mission.getMissionSpec())
-                .store(store)
-                .build();
-    }
+
 }

@@ -21,17 +21,5 @@ public record CreateReviewRequest (
 
 ) {
 
-        public Review of(Review review, Store store, Member member) {
-            return Review.builder()
-                    .title(review.getTitle())
-                    .content(review.getContent())
-                    .score(review.getScore())
-                    .store(store)
-                    .member(member)
-                    .build();
-        }
-
-
-
 }
 
